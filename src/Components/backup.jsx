@@ -11,17 +11,10 @@ const Images = ({muse,music}) => {
   const [currentSong,setCurrentSong] = useState(muse)
   const [trackProgress,setTrackProgress] =useState(0)
   const uri = currentSong?.hub?.actions?.[1]?.uri
-      // console.log(muse?.hub?.actions?.[1]?.uri)
+     
       const audioRef = useRef(new Audio(uri))
 
-       //  console.log(audioRef)
-    // let empty = []
-    // const filled = empty.push(got)
-    //  console.log(filled)
-    // console.log(got[1])oh
-    // console.log(got[0])
-    // const [trackIndex,setTrackIndex] = useState(muse[index])
-    // console.log(music?.hub?.actions?.[1]?.uri)
+      
     
      // console.log(muse.title)
     const handleClick = () => {   
@@ -79,15 +72,7 @@ const Images = ({muse,music}) => {
         audioRef.current.pause()
     }},[isPlaying])
     
-     //  useEffect(() => {
-    //       audioRef.current.pause()
-    //       audioRef.current =new Audio(audioRef)
-    //       setTrackProgress(audioRef.current.currentTime);
-
-    //  },[index])
-    // useEffect(() => {
-
-    // },[])
+    
     useEffect(() => {
       audioRef.current.pause();
     
@@ -99,7 +84,7 @@ const Images = ({muse,music}) => {
         setIsplaying(true);
         startTimer();
       }
-    }, [currentSong]);
+    }, [currentSong,uri]);
 
 
     const currentPercentage = duration ? `${(trackProgress / duration) * 100}%` : '0%';
@@ -110,56 +95,10 @@ const trackStyling = `
 
     
      return ( 
-        <div className="container w-56 h-auto " >
+        
 
 
 <div className="houseinput">
-  {/* {isPlaying &&<input
-        type="range"
-        value={trackProgress}
-        step="1"
-        min="0"
-        max={duration ? duration : `${duration}`}
-        className="progress"
-        onChange={(e) => onScrub(e.target.value)}
-        onMouseUp={onScrubEnd}
-        onKeyUp={onScrubEnd}
-        style={{ background: trackStyling }}
-	
-      />} */}
-        </div>
-                     
-           <img src= {muse?.images?.coverart} alt='music art' className="imagess" /> 
-           <p className='text-white'>{muse?.title}</p>
-           
-            
-           {/* <MdSkipPrevious 
-           size={25}
-           onClick={toPrevTrack}
-           className='btn1'
-           color="white"
-           />  
-           { !isPlaying ?  (
-           
-            <FaPlayCircle 
-            size={25}
-            className='btn'
-            onClick={handleClick}
-            />):(
-            <FaPauseCircle 
-            size={35}
-            className='btn'
-            onClick={handleClick}
-            
-            />)}
-          
-          <MdSkipNext
-          size={30}
-          onClick={toNextTrack}
-          className='btn2'
-          color="white"
-          />
- */}
 
 </div>
 

@@ -13,55 +13,13 @@ const Images = ({muse,music,toPrevTrack,toNextTrack,getSongData,index,currentInd
   
   const uri = currentSong?.hub?.actions?.[1]?.uri
       
-      const audioRef = useRef(new Audio(uri))
-
-
+      
       
     const handleClick = () => {   
         setIsplaying(prev => !prev)
     }
    
-    
-// if(isPlaying){
-//   audioRef.current.play()
-// }   
-// else{
-//   audioRef.current.pause()
-// }
 
-
-    
-       
-      
-      
-     
-      
-         
-      
-      
-
-    
-
-    
-    
-    
-     //  useEffect(() => {
-    //       audioRef.current.pause()
-    //       audioRef.current =new Audio(audioRef)
-    //       setTrackProgress(audioRef.current.currentTime);
-
-    //  },[index])
-    // useEffect(() => {
-
-    // },[])
-    
-
-
-    
-
-
-
-    
      return ( 
         <div className="container w-56 h-auto " onMouseEnter={() => setIsShown(true)}
         onMouseLeave ={() => setIsShown(false)} onClick = {() => getSongData(muse,index)}

@@ -11,32 +11,6 @@ import ThirdPartition from './Components/ThirdPartition';
 import FirstSidebar from './Components/FirstSidebar';
 import Controls from './Components/Controls';
 
-// const axios = require("axios");
-// const options = {
-//   method: 'GET',
-//   url: 'https://shazam-core.p.rapidapi.com/v1/charts/world',
-//   params: {genre_code: 'POP'},
-//   headers: {
-//     'X-RapidAPI-Key': 'e8ab5297camshdfbb47b9ac7d130p1efe56jsnddad2a502ad0',
-//     'X-RapidAPI-Host': 'shazam-core.p.rapidapi.com'
-//   }
-// };
-// function App() {
-//   const [isLoaded, setIsLoaded] = useState(false);
-//   const [music,setMusic] = useState(null)
-//   useEffect(() => {
-//     axios.request(options).then(function (response) {
-//      setIsLoaded(true);
-     
-//        setMusic(response.data.title)
-     
-//        console.log(music)
-//      }).catch(function (error) {
-//        console.error(error);
-//      });
- 
-//    },[])
-
 
 const options = {
        method: 'GET',
@@ -65,32 +39,15 @@ async function fetchdata() {
       const [currentIndex,setCurrentIndex] = useState(null)
       const [currentSong, setCurrentSong] =useState(music[0])
 
-      const [menuOpen,setMenuOpen] =useState(false)
+      
       const topchart = music?.slice(0,5)
-      const topPlay = music?.slice(0,7)
+     
       
       // const currents = music[indexx]?.hub?.actions?.[1]?.uri
       
       
 
-      // const audioRef = useRef(new Audio(currents))
-      
-    
-     
-      // const toNextTrack = () => {
-       
-      //   setCurrentIndex(currentIndex + 1)
-      //   setCurrentSong(music[currentIndex + 1])
-      //   console.log('clicked')
-        
-        
-      // }
-      // const toPrevTrack =() => {
-      //   setCurrentIndex(currentIndex - 1)
-      //   setCurrentSong(music[currentIndex - 1])
-      // }
-       
-    const getSongData = (muse,index) => {
+ const getSongData = (muse,index) => {
 console.log(index)
 setCurrentSong(muse)
 setCurrentIndex(index)
@@ -119,8 +76,8 @@ setCurrentIndex(index)
 
      
 
-    <div className='music-container  grid grid-cols-1 px-32  md:grid-cols-3  md:px-0'>
-    <h2 className='block text-center text-white mt-7 md:hidden'>Discover Pop</h2>
+    <div className='music-container  grid grid-cols-1 px-32  grid-cols-3 px-0'>
+    <h2 className=' text-center text-white mt-7 hidden'>Discover Pop</h2>
     {music?.map((muse,index) => {
   return <Images
   
@@ -139,7 +96,7 @@ key={muse.key}
     
      }
      </div>
-     <div className='div3 hidden md:block '>
+     <div className='div3 block '>
      <h3 className='font-bold text-white'>Top Chart</h3>
       {topchart.map((topc,index) => {
        return <ThirdPartition

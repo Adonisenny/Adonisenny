@@ -82,7 +82,7 @@ const AudioPlayer = ({ tracks }) => {
     } else {
       audioRef.current.pause();
     }
-  }, [isPlaying]);
+  }, [isPlaying,startTimer]);
 
   // Handles cleanup and setup when changing tracks
   useEffect(() => {
@@ -99,7 +99,7 @@ const AudioPlayer = ({ tracks }) => {
       // Set the isReady ref as true for the next pass
       isReady.current = true;
     }
-  }, [trackIndex]);
+  }, [trackIndex,startTimer,audioSrc]);
 
   
 

@@ -67,7 +67,7 @@ const Controls = ({currentSong,toNextTrack,toPrevTrack,currentIndex}) => {
 
         
     return ( 
-      <div className="player-card flex flex-row gap-12 md:flex  mt-2 " >
+      <div className="player-card  flex-row gap-12 flex  mt-2 " >
         <audio
           ref={audioRef}
           src={currentSong?.hub?.actions?.[1]?.uri}
@@ -76,8 +76,8 @@ const Controls = ({currentSong,toNextTrack,toPrevTrack,currentIndex}) => {
         >
         </audio>
        {currentSong ? (
-        <div className=" flex items-left justify-start gap-4 ml-4 md:mr-24 sm:mr-0 " >
-          <div className=" h-12 w-12 flex flex-row sm:hidden md:block ">
+        <div className=" flex items-left justify-start gap-4 ml-4 mr-24" >
+          <div className=" h-12 w-12 flex flex-row block ">
           <img src= {currentSong?.images?.coverart} alt='music art' className=" items-center mt-2 justify-center object-cover  rounded-full" />
           </div>
           <div>
@@ -92,13 +92,13 @@ const Controls = ({currentSong,toNextTrack,toPrevTrack,currentIndex}) => {
        )} 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<div className=" md:ml-24">
+<div className=" ml-24">
   
 
 
 
 
-<div className="  flex md:flex flex-row items-center justify-center gap-12 mt-0 ">
+<div className="  flex flex-row items-center justify-center gap-12 mt-0 ">
 <MdSkipPrevious 
            size={20}
            onClick={toPrevTrack}
