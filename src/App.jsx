@@ -43,7 +43,6 @@ async function fetchdata() {
       const topchart = music?.slice(0,5)
      
       
-      // const currents = music[indexx]?.hub?.actions?.[1]?.uri
       
       
 
